@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="XamlDeveloper.Presentation.View.WhyUseXamlView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="900">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Content="Why Use XAML?" FontSize="30" FontWeight="Bold" Opacity=".7" />
+
+        <RichTextBox Grid.Row="1" Margin="10" FontSize="28" BorderThickness="0" IsReadOnly="True">
+            <FlowDocument>
+                <List MarkerOffset="25" MarkerStyle="Disc">
+                    <ListItem Margin="5,20">
+                        <Paragraph>XAML is concise compared to C# or VB.NET code</Paragraph>
+                    </ListItem>
+                    <ListItem Margin="5,20">
+                        <Paragraph>XAML is composible</Paragraph>
+                    </ListItem>
+                    <ListItem Margin="5,20">
+                        <Paragraph>XAML is styleable</Paragraph>
+                    </ListItem>
+                    <ListItem Margin="5,20">
+                        <Paragraph>XAML controls are lookless</Paragraph>
+                    </ListItem>
+                    <ListItem Margin="5,20">
+                        <Paragraph>XAML is themeable</Paragraph>
+                    </ListItem>
+                    <ListItem Margin="5,20">
+                        <Paragraph>XAML has graphics, multimedia, and 3D capabilities</Paragraph>
+                    </ListItem>
+                    <ListItem Margin="5,20">
+                        <Paragraph>XAML platforms have rich data binding API's</Paragraph>
+                    </ListItem>
+                    <ListItem Margin="5,20">
+                        <Paragraph>XAML data binding enables the M-V-VM pattern, promoting separation of concerns and testing</Paragraph>
+                    </ListItem>
+                </List>
+            </FlowDocument>
+        </RichTextBox>
+    </Grid>
+</UserControl>

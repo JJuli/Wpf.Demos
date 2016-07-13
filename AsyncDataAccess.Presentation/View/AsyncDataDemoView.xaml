@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="AsyncDataAccess.Presentation.View.AsyncDataDemoView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:infrastructure="clr-namespace:Wpf.Common.Infrastructure;assembly=Wpf.Common"
+             xmlns:igWPF="http://schemas.infragistics.com/xaml/wpf"  
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="1400">
+    <Grid>
+        <Grid.Resources>
+            <infrastructure:DataContextSpy x:Key="spy"/>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Async Data Demo" FontSize="30" FontWeight="Bold" Opacity=".7" />
+
+        <StackPanel Orientation="Horizontal" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20">
+            <Button Command="{Binding Path=LoadProductsAsyncCommand}" FontSize="20" Padding="10" Cursor="Hand" Content="Load Products Async" Margin="10" />
+            <Button Command="{Binding Path=SimulateServiceExceptionCommand}" FontSize="20" Padding="10" Cursor="Hand" Content="Simulate Service Exception" Margin="10" />
+        </StackPanel>
+
+        <igWPF:XamDataGrid Grid.Row="2" HorizontalAlignment="Left" Margin="10" Width="900" BorderThickness="1" BorderBrush="DarkGray" AutoFit="True" DataSource="{Binding Path=Products}">
+            <igWPF:XamDataGrid.FieldLayoutSettings>
+                <igWPF:FieldLayoutSettings 
+                        AutoGenerateFields="False"
+                        AutoFitMode="ExtendLastField"/>
+            </igWPF:XamDataGrid.FieldLayoutSettings>
+            <igWPF:XamDataGrid.FieldLayouts>
+                <igWPF:FieldLayout>
+                    <igWPF:ComboBoxField Name="BrandId" Label="Brand" ItemsSource="{Binding Path=DataContext.Brands, Source={StaticResource spy}}" DisplayMemberPath="Name" ValuePath="BrandIdent"/>
+                    <igWPF:CheckBoxField Name="IsActive" Label="Is Active"/>
+                    <igWPF:DateTimeField Name="DateCreated" Label="Date Added" AutoFillDate="Year" />
+                    <igWPF:TextField Name="Name"/>
+                </igWPF:FieldLayout>
+            </igWPF:XamDataGrid.FieldLayouts>
+        </igWPF:XamDataGrid>
+
+    </Grid>
+</UserControl>

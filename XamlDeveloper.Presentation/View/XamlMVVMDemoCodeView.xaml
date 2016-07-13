@@ -1,0 +1,112 @@
+﻿<UserControl x:Class="XamlDeveloper.Presentation.View.XamlMVVMDemoCodeView"
+             xmlns:igWPF="http://schemas.infragistics.com/xaml/wpf"  
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:converters="clr-namespace:XamlDeveloper.Presentation.Converters"
+             xmlns:infra="clr-namespace:Wpf.Common.Infrastructure;assembly=Wpf.Common"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="1600">
+    <UserControl.Resources>
+        <converters:ObjectNullToVisibilityConverter x:Key="ObjectNullToVisibilityConverter"/>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="800"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.Resources>
+            <infra:DataContextSpy x:Key="Spy"/>
+        </Grid.Resources>
+        <Label Content="M-V-VM Demonstration" FontSize="30" FontWeight="Bold" Opacity=".7" />
+
+        <Grid Margin="20" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Content="Record Search" FontSize="20"/>
+            <StackPanel Grid.Row="1" Orientation="Horizontal"  Margin="0,10">
+                <Label Content="Brand" Width="60"/>
+                <igWPF:XamComboEditor DisplayMemberPath="Name" ValuePath="BrandIdent" ItemsSource="{Binding Path=Brands}" SelectedItem="{Binding Path=SelectedBrand}" Margin="10,0,20,0" HorizontalAlignment="Left" Width="150" VerticalAlignment="Center"/>
+
+                <Label Content="Category" />
+                <igWPF:XamComboEditor DisplayMemberPath="Name" ValuePath="CategoryIdent" ItemsSource="{Binding Path=Categories}" SelectedItem="{Binding Path=SelectedCategory}" Margin="10,0,0,0" HorizontalAlignment="Left" Width="150" VerticalAlignment="Center"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Grid.Row="2" Margin="0,10">
+                <Label Content="Product" Width="60"/>
+                <TextBox VerticalAlignment="Center" Text="{Binding Path=SearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10,0,0,0" Width="150"/>
+            </StackPanel>
+
+            <ListBox x:Name="SearchResultsListBox" ItemsSource="{Binding Path=SearchResults}" Grid.Row="3">
+                <ListBox.InputBindings>
+                    <KeyBinding Key="Enter" Command="{Binding Path=EditProductCommand}" CommandParameter="{Binding Path=SelectedItem, ElementName=SearchResultsListBox}" />
+                    <KeyBinding Key="Return" Command="{Binding Path=EditProductCommand}" CommandParameter="{Binding Path=SelectedItem, ElementName=SearchResultsListBox}" />
+                </ListBox.InputBindings>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="0,2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="490" />
+                                <ColumnDefinition Width="35"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Text="{Binding Path=BrandName}" VerticalAlignment="Center" Margin="0,0,5,0" TextTrimming="CharacterEllipsis" />
+                            <TextBlock Text="{Binding Path=CategoryName}" VerticalAlignment="Center" Grid.Column="1"  Margin="0,0,5,0" TextTrimming="CharacterEllipsis"  />
+                            <TextBlock Text="{Binding Path=Name}" TextTrimming="CharacterEllipsis" VerticalAlignment="Center" Grid.Column="2"/>
+                            <Button Grid.Column="3" Cursor="Hand" Command="{Binding Path=DataContext.EditProductCommand, Source={StaticResource Spy}}" CommandParameter="{Binding}">
+                                <Button.Template>
+                                    <ControlTemplate>
+                                        <Image Source="../Images/edit.png" Stretch="Uniform" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="1" Margin="20" Visibility="{Binding Path=Product, Converter={StaticResource ObjectNullToVisibilityConverter}}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+                
+            <Label Content="Product Maintenance" FontSize="20"/>
+            <Grid Grid.Row="1" KeyboardNavigation.TabNavigation="Cycle">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="85"/>
+                    <ColumnDefinition Width="500"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Label Content="Name" Margin="0,10,0,0" />
+                <TextBox infra:FocusExtension.IsFocused="{Binding Path=IsNameFocused}"  Margin="0,10,0,0" Text="{Binding Path=Product.Name, Mode=TwoWay, ValidatesOnDataErrors=True, ValidatesOnNotifyDataErrors=True, ValidatesOnExceptions=True}" Grid.Column="1" Grid.Row="0" />
+                <Label Margin="0,10,0,0" Content="Brand Id" Grid.Row="1" />
+                <ComboBox Width="150" HorizontalAlignment="Left" Margin="0,10,0,0" SelectedValue="{Binding Path=Product.BrandId, Mode=TwoWay}" Grid.Column="1" Grid.Row="1" DisplayMemberPath="Name" SelectedValuePath="BrandIdent" ItemsSource="{Binding Path=Brands}" />
+                <Label Margin="0,10,0,0" Content="Category Id" Grid.Row="2" />
+                <ComboBox Width="150" HorizontalAlignment="Left" Margin="0,10,0,0" SelectedValue="{Binding Path=Product.CategoryId, Mode=TwoWay}" Grid.Column="1" Grid.Row="2" DisplayMemberPath="Name" SelectedValuePath="CategoryIdent" ItemsSource="{Binding Path=Categories}" />
+                <Label Margin="0,10,0,0" Content="Cost" Grid.Row="3" />
+                <TextBox HorizontalAlignment="Left" Width="100" Margin="0,10,0,0" Text="{Binding Path=Product.Cost, Mode=TwoWay, StringFormat='F2', ValidatesOnDataErrors=True, ValidatesOnNotifyDataErrors=True, ValidatesOnExceptions=True}" Grid.Column="1" Grid.Row="3" />
+                <CheckBox Margin="0,10,0,0" IsChecked="{Binding Path=Product.IsActive, Mode=TwoWay}" Content="Is Active" Grid.Column="1" Grid.Row="4" />
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

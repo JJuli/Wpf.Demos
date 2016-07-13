@@ -1,0 +1,29 @@
+﻿<Application 
+    x:Class="Wpf.Demonstrations.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:avalonedit="http://icsharpcode.net/sharpdevelop/avalonedit"
+    >
+    <Application.Resources>
+        <SolidColorBrush x:Key="background" Color="#FF0763A2" />
+        <SolidColorBrush x:Key="headerText" Color="#FFCFE0E8" />
+        <SolidColorBrush x:Key="outerBorder" Color="WhiteSmoke" />
+
+        <Style TargetType="Label">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        </Style>
+        <Style TargetType="avalonedit:TextEditor">
+            <Setter Property="Margin" Value="10,15,10,10"/>
+            <Setter Property="IsReadOnly" Value="True"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="SyntaxHighlighting" Value="XML"/>
+        </Style>
+    </Application.Resources>
+</Application>

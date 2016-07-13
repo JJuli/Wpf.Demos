@@ -1,0 +1,35 @@
+﻿<UserControl
+    x:Class="Wpf.DataBinding.Fundamentals.BindingToClrProperties"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:avalonedit="http://icsharpcode.net/sharpdevelop/avalonedit"
+    mc:Ignorable="d"
+    d:DesignHeight="500" d:DesignWidth="500">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="85" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Label Content="First Name" />
+        <TextBox Grid.Column="1" Text="{Binding Path=FirstName}" />
+        <Label Grid.Row="1" Content="Last Name" />
+        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=LastName}" />
+
+        <Button Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Name="btnChangeFirstName"
+                Click="btnChangeFirstName_Click" Content="Change First Name" />
+
+        <TextBlock Grid.Row="3" Grid.Column="1" Text="Simulate model changing data, UI reflects change" Margin="5" />
+
+        <avalonedit:TextEditor Grid.Row="4" Grid.ColumnSpan="2" x:Name="textEditor" />
+    </Grid>
+</UserControl>

@@ -1,0 +1,83 @@
+[
+  {
+    "BrandIdent": 1,
+    "Name": "Lipton",
+    "DateCreated": "2016-06-23T17:03:56.517",
+    "DateModified": null,
+    "CreatedBy": "Karl",
+    "ModifiedBy": "",
+    "Timestamp": "AAAAAAAAF3E="
+  },
+  {
+    "BrandIdent": 2,
+    "Name": "Bigelow",
+    "DateCreated": "2016-06-23T17:08:40.473",
+    "DateModified": null,
+    "CreatedBy": "Karl",
+    "ModifiedBy": "",
+    "Timestamp": "AAAAAAAAGJ8="
+  },
+  {
+    "BrandIdent": 3,
+    "Name": "Horizon Organic",
+    "DateCreated": "2016-06-23T17:10:08.923",
+    "DateModified": null,
+    "CreatedBy": "Karl",
+    "ModifiedBy": "",
+    "Timestamp": "AAAAAAAAGRY="
+  },
+  {
+    "BrandIdent": 4,
+    "Name": "Adora",
+    "DateCreated": "2016-06-23T17:11:33.113",
+    "DateModified": null,
+    "CreatedBy": "Karl",
+    "ModifiedBy": "",
+    "Timestamp": "AAAAAAAAGTg="
+  },
+  {
+    "BrandIdent": 5,
+    "Name": "Ahold",
+    "DateCreated": "2016-06-23T17:12:34.663",
+    "DateModified": null,
+    "CreatedBy": "Karl",
+    "ModifiedBy": "",
+    "Timestamp": "AAAAAAAAGTo="
+  },
+  {
+    "BrandIdent": 6,
+    "Name": "Blue Diamond",
+    "DateCreated": "2016-06-23T17:14:00.47",
+    "DateModified": null,
+    "CreatedBy": "Karl",
+    "ModifiedBy": "",
+    "Timestamp": "AAAAAAAAGX8="
+  },
+  {
+    "BrandIdent": 7,
+    "Name": "Hershey's",
+    "DateCreated": "2016-06-23T17:14:47.98",
+    "DateModified": null,
+    "CreatedBy": "Karl",
+    "ModifiedBy": "",
+    "Timestamp": "AAAAAAAAGaw="
+  },
+  {
+    "BrandIdent": 8,
+    "Name": "Dial",
+    "DateCreated": "2016-06-23T17:21:59.217",
+    "DateModified": null,
+    "CreatedBy": "Karl",
+    "ModifiedBy": "",
+    "Timestamp": "AAAAAAAAGmQ="
+  },
+  {
+    "BrandIdent": 9,
+    "Name": "Softsoap",
+    "DateCreated": "2016-06-23T17:23:02.987",
+    "DateModified": null,
+    "CreatedBy": "Karl",
+    "ModifiedBy": "",
+    "Timestamp": "AAAAAAAAGpQ="
+  }
+]

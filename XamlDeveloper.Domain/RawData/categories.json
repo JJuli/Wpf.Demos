@@ -1,0 +1,47 @@
+[
+  {
+    "CategoryIdent": 12,
+    "Name": "Tea",
+    "DateCreated": "2016-06-23T00:00:00",
+    "DateModified": null,
+    "CreatedBy": "Karl",
+    "ModifiedBy": "",
+    "Timestamp": "AAAAAAAACEE="
+  },
+  {
+    "CategoryIdent": 13,
+    "Name": "Milk",
+    "DateCreated": "2016-06-23T17:10:34.897",
+    "DateModified": null,
+    "CreatedBy": "Karl",
+    "ModifiedBy": "",
+    "Timestamp": "AAAAAAAAGRc="
+  },
+  {
+    "CategoryIdent": 14,
+    "Name": "Almonds",
+    "DateCreated": "2016-06-23T17:13:20.47",
+    "DateModified": null,
+    "CreatedBy": "Karl",
+    "ModifiedBy": "",
+    "Timestamp": "AAAAAAAAGXA="
+  },
+  {
+    "CategoryIdent": 15,
+    "Name": "Candy",
+    "DateCreated": "2016-06-23T17:17:10.813",
+    "DateModified": null,
+    "CreatedBy": "Karl",
+    "ModifiedBy": "",
+    "Timestamp": "AAAAAAAAGb0="
+  },
+  {
+    "CategoryIdent": 16,
+    "Name": "Soap",
+    "DateCreated": "2016-06-23T17:21:43.403",
+    "DateModified": null,
+    "CreatedBy": "Karl",
+    "ModifiedBy": "",
+    "Timestamp": "AAAAAAAAGmM="
+  }
+]

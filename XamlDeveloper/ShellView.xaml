@@ -1,0 +1,67 @@
+﻿<Window x:Class="XamlDeveloper.ShellView"
+        xmlns:igWPF="http://schemas.infragistics.com/xaml/wpf"
+        xmlns:prism="http://prismlibrary.com/"
+        xmlns:infra="clr-namespace:XamlDeveloper.Infrastructure"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="XAML Developer" Height="950" Width="1900" 
+        Icon="/XamlDeveloper;component/Images/ig.ico"
+        xmlns:controls="clr-namespace:Wpf.Common.Controls;assembly=Wpf.Common"
+        FocusManager.FocusedElement="{Binding ElementName=NextButton}">
+    <Border x:Name="RootContainer" BorderThickness="8,0,8,8" BorderBrush="DarkGray">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid Background="Black">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Images/ig.ico" HorizontalAlignment="Left" Margin="5"/>
+                    <TextBlock Margin="5,0,0,0" VerticalAlignment="Center" Text="INFRAGISTICS" Foreground="White" FontSize="24"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,10,0">
+                    <TextBlock Text="Theme" VerticalAlignment="Center" Foreground="White" FontSize="18"/>
+                    <igWPF:XamComboEditor Margin="10,0,0,0" SelectedItem="{Binding Path=SelectedThemeItem, Mode=TwoWay}" ItemsSource="{Binding Path=ThemeItems}" Width="125" VerticalAlignment="Center" DisplayMemberPath="Name" DropDownButtonDisplayMode="MouseOver"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="1">
+                <controls:AnimatedContentControl Duration="750" TransitionType="Fade" prism:RegionManager.RegionName="{x:Static infra:Constants.ContentRegionName}"/>
+            </Grid>
+
+            <Grid Grid.Row="2" Background="Transparent" Margin="10">
+                <StackPanel Orientation="Horizontal"  HorizontalAlignment="Right">
+                    <Button Cursor="Hand" Command="{Binding Path=PreviousCommand}">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image x:Name="img" Source="Images/previous.png" Height="32" Margin="5"/>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="Button.IsEnabled" Value="False">
+                                        <Setter TargetName="img" Property="Opacity" Value=".25"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button Cursor="Hand" x:Name="NextButton" Command="{Binding Path=NextCommand}">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image x:Name="img" Source="Images/next.png" Height="32" Margin="5"/>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="Button.IsEnabled" Value="False">
+                                        <Setter TargetName="img" Property="Opacity" Value=".25"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

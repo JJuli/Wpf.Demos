@@ -1,0 +1,32 @@
+﻿<Window x:Class="AsyncDataAccess.ShellView"
+        xmlns:prism="http://prismlibrary.com/"
+        xmlns:infra="clr-namespace:AsyncDataAccess.Infrastructure"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Async Data Access" Height="950" Width="1900" Icon="Images/ig.ico" >
+    <Border x:Name="RootContainer" BorderThickness="8,0,8,8" BorderBrush="DarkGray">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Background="Black">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Images/ig.ico" HorizontalAlignment="Left" Margin="5"/>
+                    <TextBlock Margin="5,0,0,0" VerticalAlignment="Center" Text="INFRAGISTICS" Foreground="White" FontSize="24"></TextBlock>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="1">
+                <ContentControl prism:RegionManager.RegionName="{x:Static infra:Constants.ContentRegionName}" />
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

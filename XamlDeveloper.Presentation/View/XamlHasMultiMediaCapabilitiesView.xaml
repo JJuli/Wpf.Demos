@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="XamlDeveloper.Presentation.View.XamlHasMultiMediaCapabilitiesView"
+             xmlns:controls="clr-namespace:Wpf.Common.Controls;assembly=Wpf.Common"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="1000">
+    <UserControl.Resources>
+        <Style TargetType="controls:ImageButton">
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid Margin="0,20,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Label Content="XAML has Multimedia Capabilities" FontSize="30" FontWeight="Bold" Opacity=".7" />
+
+        <Image Source="../Images/snowmonkey.png" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        
+        <MediaElement LoadedBehavior="Manual" x:Name="MediaPlayer" Source="Video/SnowMonkeyMeditations.mp4" Grid.Row="1"/>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center">
+            <controls:ImageButton Image="../Images/play.png" x:Name="btnPlay" Click="btnPlay_Click" />
+            <controls:ImageButton Image="../Images/pause.png" x:Name="btnPause" Click="btnPause_Click" />
+            <controls:ImageButton Image="../Images/stop.png" x:Name="btnStop" Click="btnStop_Click" />
+            <controls:ImageButton Image="../Images/backward.png" x:Name="btnMoveBack" Click="btnMoveBack_Click" />
+            <controls:ImageButton Image="../Images/forward.png" x:Name="btnMoveForward" Click="btnMoveForward_Click" />
+        </StackPanel>
+    </Grid>
+</UserControl>

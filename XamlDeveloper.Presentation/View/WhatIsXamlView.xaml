@@ -1,0 +1,64 @@
+﻿<UserControl x:Class="XamlDeveloper.Presentation.View.WhatIsXamlView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="900">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Content="What is XAML?" FontSize="30" FontWeight="Bold" Opacity=".7" />
+
+        <RichTextBox Grid.Row="1" Margin="10" FontSize="28" BorderThickness="0" IsReadOnly="True">
+            <FlowDocument>
+                <List MarkerOffset="25" MarkerStyle="Disc">
+                    <ListItem Margin="5,20">
+                        <Paragraph>e<Run FontSize="36" FontWeight="Bold" Text="X" />tensible <Run FontSize="36" FontWeight="Bold" Text="A" />pplication <Run FontSize="36" FontWeight="Bold" Text="M" />arkup <Run FontSize="36" FontWeight="Bold" Text="L" />anguage
+                        </Paragraph>
+                    </ListItem>
+                    <ListItem Margin="5,20">
+                        <Paragraph>All XAML is valid XML</Paragraph>
+                    </ListItem>
+                    <ListItem Margin="5,20">
+                        <Paragraph>XAML is a declarative application language that describes the user interface</Paragraph>
+                        <List MarkerOffset="25" MarkerStyle="Circle" Margin="0">
+                            <ListItem Margin="5,0">
+                                <Paragraph>Instantiate Objects</Paragraph>
+                            </ListItem>
+                            <ListItem Margin="5,0">
+                                <Paragraph>Set Property Values</Paragraph>
+                            </ListItem>
+                        </List>
+                    </ListItem>
+                    <ListItem Margin="5,20">
+                        <Paragraph>XAML is used in these Microsoft Platforms:</Paragraph>
+                        <List MarkerOffset="25" MarkerStyle="Circle" Margin="0">
+                            <ListItem Margin="5,0">
+                                <Paragraph>Windows Presentation Foundation - WPF</Paragraph>
+                            </ListItem>
+                            <ListItem Margin="5,0">
+                                <Paragraph>Universal Windows Platform - UWP</Paragraph>
+                            </ListItem>
+                            <ListItem Margin="5,0">
+                                <Paragraph>Xamarin.Forms</Paragraph>
+                            </ListItem>
+                            <ListItem Margin="5,0">
+                                <Paragraph>Windows 8, 8.1 - Store Applications</Paragraph>
+                            </ListItem>
+                            <ListItem Margin="5,0">
+                                <Paragraph>Windows Phone 8</Paragraph>
+                            </ListItem>
+                            <ListItem Margin="5,0">
+                                <Paragraph>Silverlight</Paragraph>
+                            </ListItem>
+                        </List>
+                    </ListItem>
+
+                </List>
+            </FlowDocument>
+        </RichTextBox>
+    </Grid>
+</UserControl>

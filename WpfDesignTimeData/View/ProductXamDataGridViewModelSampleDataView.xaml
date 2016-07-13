@@ -1,0 +1,13 @@
+﻿<UserControl xmlns:igWPF="http://schemas.infragistics.com/xaml/wpf"  x:Class="WpfDesignTimeData.View.ProductXamDataGridViewModelSampleDataView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfDesignTimeData.View"
+             d:DataContext="{d:DesignInstance Type=local:ProductXamDataGridViewModelSampleDataViewModel, IsDesignTimeCreatable=True}"
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="1200">
+    <Grid>
+           <igWPF:XamDataGrid DataSource="{Binding Path=Products}" /> 
+    </Grid>
+</UserControl>

@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="XamlDeveloper.Presentation.View.XamlHasRichDataBindingStackView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:converters="clr-namespace:XamlDeveloper.Presentation.Converters"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="800">
+    <UserControl.Resources>
+        <converters:ValueToBrushConverter x:Key="ValueToBrushConverter"/>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Label Content="XAML Platforms Have Rich Data Binding API's" FontSize="30" FontWeight="Bold" Opacity=".7"/>
+        <Label Content="Dependency Properties Enable Rich Data Binding" FontSize="24" FontStyle="Italic" Margin="20,10,0,0" FontWeight="Bold" Opacity=".7" Grid.Row="1"/>
+        
+        <StackPanel Margin="20" Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center">
+            <Slider x:Name="slider" Value="0" TickPlacement="BottomRight" TickFrequency="5" Minimum="0" Maximum="300" Width="500" VerticalAlignment="Center" HorizontalAlignment="Left" />
+            <TextBlock Text="{Binding Path=Value, ElementName=slider, StringFormat=F0}" FontSize="30" VerticalAlignment="Center"/>
+        </StackPanel>
+
+        <Rectangle Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" 
+                   Height="{Binding Path=Value, ElementName=slider}" 
+                   Width="{Binding Path=Value, ElementName=slider}" 
+                   Fill="{Binding Path=Value, ElementName=slider, Converter={StaticResource ValueToBrushConverter}}"/>
+
+        <Image Grid.Row="4" Source="../Images/richdatabinding.png" Stretch="None"/>
+    </Grid>
+</UserControl>

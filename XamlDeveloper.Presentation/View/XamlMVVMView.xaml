@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="XamlDeveloper.Presentation.View.XamlMVVMView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="1400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Content="XAML M-V-VM (Model-View-ViewModel) Implementation" FontSize="30" FontWeight="Bold" Opacity=".7" />
+        <Label Content="XAML data binding enables the M-V-VM pattern, promoting separation of concerns and testing" FontSize="24" FontStyle="Italic" Margin="20,10,0,0" FontWeight="Bold" Opacity=".7" Grid.Row="1" />
+        <Image Source="../Images/mvvm.png" Grid.Row="2" Margin="20"/>
+    </Grid>
+</UserControl>

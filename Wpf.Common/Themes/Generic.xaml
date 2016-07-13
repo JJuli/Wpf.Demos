@@ -1,0 +1,9 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Wpf.Common;component/Controls/AnimatedContentControlResourceDictionary.xaml" />
+        <ResourceDictionary Source="/Wpf.Common;component/Controls/ImageButtonResourceDictionary.xaml"/>
+        <ResourceDictionary Source="/Wpf.Common;component/Controls/StopLightResourceDictionary.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

@@ -1,0 +1,86 @@
+[
+  {
+    "SeasonIdent": 1,
+    "Name": "Spring",
+    "SortOrder": 1,
+    "BeginMonth": 3,
+    "EndMonth": 5,
+    "DateCreated": "2016-06-23T19:27:49.873",
+    "DateModified": null,
+    "CreatedBy": "Karl",
+    "ModifiedBy": "",
+    "Timestamp": "AAAAAAAAGtg="
+  },
+  {
+    "SeasonIdent": 2,
+    "Name": "Summer",
+    "SortOrder": 2,
+    "BeginMonth": 6,
+    "EndMonth": 8,
+    "DateCreated": "2016-06-23T19:28:07.747",
+    "DateModified": null,
+    "CreatedBy": "Karl",
+    "ModifiedBy": "",
+    "Timestamp": "AAAAAAAAGtk="
+  },
+  {
+    "SeasonIdent": 4,
+    "Name": "Fall",
+    "SortOrder": 3,
+    "BeginMonth": 9,
+    "EndMonth": 10,
+    "DateCreated": "2016-06-23T19:29:01.733",
+    "DateModified": null,
+    "CreatedBy": "Karl",
+    "ModifiedBy": "",
+    "Timestamp": "AAAAAAAAGto="
+  },
+  {
+    "SeasonIdent": 5,
+    "Name": "Winter",
+    "SortOrder": 4,
+    "BeginMonth": 11,
+    "EndMonth": 2,
+    "DateCreated": "2016-06-23T19:29:31.777",
+    "DateModified": null,
+    "CreatedBy": "Karl",
+    "ModifiedBy": "",
+    "Timestamp": "AAAAAAAAGts="
+  },
+  {
+    "SeasonIdent": 7,
+    "Name": "Easter",
+    "SortOrder": 6,
+    "BeginMonth": 3,
+    "EndMonth": 4,
+    "DateCreated": "2016-06-23T19:30:41.3",
+    "DateModified": null,
+    "CreatedBy": "Karl",
+    "ModifiedBy": "",
+    "Timestamp": "AAAAAAAAGtw="
+  },
+  {
+    "SeasonIdent": 8,
+    "Name": "Christmas",
+    "SortOrder": 8,
+    "BeginMonth": 12,
+    "EndMonth": 12,
+    "DateCreated": "2016-06-23T19:31:04.277",
+    "DateModified": null,
+    "CreatedBy": "Karl",
+    "ModifiedBy": "",
+    "Timestamp": "AAAAAAAAGt0="
+  },
+  {
+    "SeasonIdent": 9,
+    "Name": "Thanksgiving",
+    "SortOrder": 7,
+    "BeginMonth": 11,
+    "EndMonth": 11,
+    "DateCreated": "2016-06-23T19:31:26.827",
+    "DateModified": null,
+    "CreatedBy": "Karl",
+    "ModifiedBy": "",
+    "Timestamp": "AAAAAAAAGt4="
+  }
+]

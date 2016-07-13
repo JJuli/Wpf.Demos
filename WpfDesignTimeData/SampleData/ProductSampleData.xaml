@@ -1,0 +1,19 @@
+﻿<vm:SampleDataViewModel 
+    xmlns:vm="clr-namespace:WpfDesignTimeData.SampleData"
+    xmlns:m="clr-namespace:WpfDesignTimeData.Model" >
+    <vm:SampleDataViewModel.Brands>
+        <m:Brand Name="Lipton" BrandIdent="100"/>
+    </vm:SampleDataViewModel.Brands>
+    <vm:SampleDataViewModel.Product>
+        <m:Product 
+            Name="Lipton Black Tea  Pyramid Tea Bags Bavarian Wild Berry - 20 Ct"
+            ProductIdent="2341"
+            BrandId="100"
+            Cost="2.99"
+            IsActive="True"
+            DateCreated="11/20/2016"
+           />
+    </vm:SampleDataViewModel.Product>
+</vm:SampleDataViewModel>
+    
+    
